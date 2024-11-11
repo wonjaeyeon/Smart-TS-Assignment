@@ -2,7 +2,7 @@ package com.kikii.smarttsassignment.data.datasource.remote.api.auth
 
 import com.google.gson.annotations.SerializedName
 
-
+// check
 data class LoginResponse(
     @SerializedName("status")
     val status: Int,
