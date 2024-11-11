@@ -1,4 +1,4 @@
-package com.kikii.smarttsassignment
+package com.kikii.smarttsassignment.ui
 
 import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
