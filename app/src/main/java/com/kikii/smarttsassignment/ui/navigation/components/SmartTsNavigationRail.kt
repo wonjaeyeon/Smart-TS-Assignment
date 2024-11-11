@@ -21,7 +21,7 @@ import com.kikii.smarttsassignment.ui.window.ReplyNavigationContentPosition
 import com.kikii.smarttsassignment.ui.navigation.components.policy.hasRoute
 
 @Composable
-fun ReplyNavigationRail(
+fun SmartTsNavigationRail(
     currentDestination: NavDestination?,
     navigationContentPosition: ReplyNavigationContentPosition,
     navigateToTopLevelDestination: (TopLevelDestination) -> Unit,

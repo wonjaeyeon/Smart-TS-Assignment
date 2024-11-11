@@ -13,7 +13,7 @@ import com.kikii.smarttsassignment.ui.navigation.TopLevelDestination
 import com.kikii.smarttsassignment.ui.navigation.components.policy.hasRoute
 
 @Composable
-fun ReplyBottomNavigationBar(
+fun SmartTsBottomNavigationBar(
     currentDestination: NavDestination?,
     navigateToTopLevelDestination: (TopLevelDestination) -> Unit
 ) {

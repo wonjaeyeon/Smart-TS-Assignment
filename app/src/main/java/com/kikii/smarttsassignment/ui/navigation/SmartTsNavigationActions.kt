@@ -1,15 +1,13 @@
 package com.kikii.smarttsassignment.ui.navigation
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.*
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.kikii.smarttsassignment.R
 
 
-class ReplyNavigationActions(private val navController: NavHostController) {
+class SmartTsNavigationActions(private val navController: NavHostController) {
 
     fun navigateTo(destination: TopLevelDestination) {
         navController.navigate(destination.route) {
@@ -32,14 +30,14 @@ class ReplyNavigationActions(private val navController: NavHostController) {
 val TOP_LEVEL_DESTINATIONS = listOf(
     TopLevelDestination(
         route = Route.Router,
-        selectedIcon = Icons.Default.Info,
-        unselectedIcon = Icons.Default.Info,
+        selectedIcon = Icons.Default.PersonPin,
+        unselectedIcon = Icons.Default.PersonPin,
         iconTextId = R.string.tab_router
     ),
     TopLevelDestination(
       route = Route.Dispatcher,
-        selectedIcon = Icons.Default.CheckCircle,
-        unselectedIcon = Icons.Default.CheckCircle,
+        selectedIcon = Icons.Default.DirectionsBus,
+        unselectedIcon = Icons.Default.DirectionsBus,
         iconTextId = R.string.tab_dispatcher
     ),
     TopLevelDestination(

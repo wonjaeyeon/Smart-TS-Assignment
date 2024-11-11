@@ -31,7 +31,7 @@ class ReplyNavSuiteScope(
 )
 
 @Composable
-fun ReplyNavigationWrapper(
+fun SmartTsNavigationWrapper(
     currentDestination: NavDestination?,
     navigateToTopLevelDestination: (TopLevelDestination) -> Unit,
     content: @Composable ReplyNavSuiteScope.() -> Unit
@@ -88,11 +88,11 @@ fun ReplyNavigationWrapper(
             layoutType = navLayoutType,
             navigationSuite = {
                 when (navLayoutType) {
-                    NavigationSuiteType.NavigationBar -> ReplyBottomNavigationBar(
+                    NavigationSuiteType.NavigationBar -> SmartTsBottomNavigationBar(
                         currentDestination = currentDestination,
                         navigateToTopLevelDestination = navigateToTopLevelDestination
                     )
-                    NavigationSuiteType.NavigationRail -> ReplyNavigationRail(
+                    NavigationSuiteType.NavigationRail -> SmartTsNavigationRail(
                         currentDestination = currentDestination,
                         navigationContentPosition = navContentPosition,
                         navigateToTopLevelDestination = navigateToTopLevelDestination,
