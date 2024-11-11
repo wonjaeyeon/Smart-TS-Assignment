@@ -6,6 +6,7 @@ import com.kikii.smarttsassignment.data.datasource.remote.api.route.RouteRespons
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 
@@ -16,9 +17,13 @@ interface SmartTsAPIService {
     ): LoginResponse
 
     @GET("route/driver")
-    suspend fun getDriverRoute(): RouteResponse
+    suspend fun getDriverRoute(
+        //@Header("Bearer") token: String
+    ): RouteResponse
 
     @GET("dispatch/driver/{date}")
-    suspend fun getDriverDispatch(@Field("date") date: String): RouteResponse
+    suspend fun getDriverDispatch(
+        //@Header("Bearer") token: String,
+        @Field("date") date: String): RouteResponse
 
 }

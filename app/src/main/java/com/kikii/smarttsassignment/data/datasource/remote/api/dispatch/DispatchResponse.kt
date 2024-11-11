@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class DispatchResponse (
     @SerializedName("id")
-    val id: String,
+    val id: Long,
 
     @SerializedName("driverId")
     val driverId: String,
@@ -12,24 +12,14 @@ data class DispatchResponse (
     @SerializedName("driverName")
     val driverName: String,
 
+    @SerializedName("routeId")
+    val routeId: String,
+
     @SerializedName("routeName")
     val routeName: String,
 
-    @SerializedName("token")
-    val token: String,
+    @SerializedName("busId")
+    val busId: String,
 
-    @SerializedName("companyId")
-    val companyId: String,
 
-    @SerializedName("position")
-    val position: String,
-
-    @SerializedName("companyName")
-    val companyName: String,
-
-    @SerializedName("deviceToken")
-    val deviceToken: String,
-
-    @SerializedName("agree")
-    val agree: Boolean,
 )

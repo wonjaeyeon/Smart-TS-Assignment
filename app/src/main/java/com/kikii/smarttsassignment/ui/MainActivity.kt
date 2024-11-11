@@ -12,8 +12,9 @@ import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
 import com.google.accompanist.adaptive.calculateDisplayFeatures
 import com.kikii.smarttsassignment.ui.theme.SmartTsAssignmentTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
 
