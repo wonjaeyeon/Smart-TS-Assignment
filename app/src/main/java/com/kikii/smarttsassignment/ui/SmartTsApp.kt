@@ -4,11 +4,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.*
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.window.layout.DisplayFeature
 import androidx.window.layout.FoldingFeature
 import com.kikii.smarttsassignment.ui.feature.auth.LoginScreen
+import com.kikii.smarttsassignment.ui.feature.auth.LoginViewModel
 import com.kikii.smarttsassignment.ui.navigation.SmartTsNavHost
 import com.kikii.smarttsassignment.ui.navigation.SmartTsNavigationActions
 import com.kikii.smarttsassignment.ui.navigation.components.SmartTsNavigationWrapper
@@ -22,6 +24,7 @@ import com.kikii.smarttsassignment.ui.window.isSeparating
 fun SmartTsApp(
     windowSize: WindowSizeClass,
     displayFeatures: List<DisplayFeature>,
+    loginViewModel: LoginViewModel = hiltViewModel()
 ) {
     val foldingFeature = displayFeatures.filterIsInstance<FoldingFeature>().firstOrNull()
 
