@@ -10,13 +10,18 @@
     <string name="password">Password</string>
 
 
-    <string name="tab_router">Router</string>
-    <string name="tab_dispatcher">Dispatcher</string>
+    <string name="tab_route">Route</string>
+    <string name="tab_dispatch">Dispatch</string>
     <string name="tab_settings">Settings</string>
 
 
     <string name="route_screen_title">Route</string>
     <string name="route_screen_subtitle">This screen will help you learn about navigation in Jetpack Compose</string>
+
+    <string name="dispatch_screen_title">Dispatch</string>
+    <string name="dispatch_screen_subtitle">There are no Dispatches</string>
+    <string name="dispatch_screen_no_dispatches">배차일보가 존재하지 않습니다.</string>
+    
 
 
     <string name="empty_screen_title">Screen under construction</string>

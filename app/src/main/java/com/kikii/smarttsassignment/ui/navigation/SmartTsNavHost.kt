@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.window.layout.DisplayFeature
+import com.kikii.smarttsassignment.ui.feature.dispatch.DispatchScreen
 import com.kikii.smarttsassignment.ui.feature.empty.EmptyComingSoon
 import com.kikii.smarttsassignment.ui.feature.route.RouteScreen
 import com.kikii.smarttsassignment.ui.feature.settings.SettingScreen
@@ -31,7 +32,7 @@ fun SmartTsNavHost(
         }
 
         composable<Route.Dispatcher> {
-            EmptyComingSoon()
+            DispatchScreen()
         }
 
         composable<Route.Settings> {

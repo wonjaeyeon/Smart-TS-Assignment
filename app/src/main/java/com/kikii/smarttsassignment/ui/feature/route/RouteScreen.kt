@@ -22,10 +22,6 @@ fun RouteScreen(
 ) {
     val routeUiState by viewModel.routeUiState.collectAsState()
 
-
-
-
-
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,

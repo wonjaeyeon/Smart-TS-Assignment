@@ -7,7 +7,9 @@ import com.kikii.smarttsassignment.data.datasource.remote.api.route.RouteRespons
 import com.kikii.smarttsassignment.data.mapper.RouteMapper
 import com.kikii.smarttsassignment.data.model.RouteModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import java.net.ConnectException
 import javax.inject.Inject
 
 class DefaultRouteRepository @Inject constructor(
@@ -38,6 +40,14 @@ class DefaultRouteRepository @Inject constructor(
                 ResultData.ErrorData(Exception("Error fetching route"))
             }
         }
+            .catch { e ->
+                // Handle exceptions like network errors
+                if (e is ConnectException) {
+                    emit(ResultData.ErrorData(Exception("No Server")))
+                } else {
+                    emit(ResultData.ErrorData(Exception(e.toString())))
+                }
+            }
     }
 
     override val localRouteModel : Flow<ResultData<RouteModel>>

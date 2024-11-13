@@ -32,13 +32,13 @@ val TOP_LEVEL_DESTINATIONS = listOf(
         route = Route.Router,
         selectedIcon = Icons.Default.PersonPin,
         unselectedIcon = Icons.Default.PersonPin,
-        iconTextId = R.string.tab_router
+        iconTextId = R.string.tab_route
     ),
     TopLevelDestination(
       route = Route.Dispatcher,
         selectedIcon = Icons.Default.DirectionsBus,
         unselectedIcon = Icons.Default.DirectionsBus,
-        iconTextId = R.string.tab_dispatcher
+        iconTextId = R.string.tab_dispatch
     ),
     TopLevelDestination(
         route = Route.Settings, // Add Settings to the top-level destinations
