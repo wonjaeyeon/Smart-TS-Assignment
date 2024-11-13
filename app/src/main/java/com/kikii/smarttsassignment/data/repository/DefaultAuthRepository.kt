@@ -121,6 +121,53 @@ class DefaultAuthRepository @Inject constructor(
         }
     }
 
+    // Update Auth Model: Update the user's info by fetching the latest data from the server
+    override suspend fun updateAuthModel(): Flow<ResultData<AuthModel?>> {
+        return flow {
+            val user = localDataSource.currentUsers.firstOrNull()
+            if (user.isNullOrEmpty()) {
+                emit(ResultData.ErrorData(
+                    Exception("No user found")
+                ))
+                return@flow
+            }
+
+            val loginId = user.first().loginId
+            val token = user.first().token
+
+            val response = remoteDataSource.getLoginResponse(
+                AuthRequest(loginId, token)
+            ).firstOrNull()
+            if (response == null) {
+                emit(ResultData.ErrorData(
+                    Exception("No response from server")
+                ))
+                return@flow
+            }
+
+            val responseBody = response.body()
+            if (responseBody == null) {
+                emit(ResultData.ErrorData(
+                    Exception("No response from server or invalid response")
+                ))
+                return@flow
+            }
+
+            if (responseBody.status == 400) {
+                emit(ResultData.ErrorData(
+                    Exception("Invalid token")
+                ))
+                return@flow
+            }
+
+            if (responseBody.status == 200) {
+                val updatedUser = authMapper.fromAuthResponseToAuthEntity(responseBody)
+                localDataSource.updateUser(updatedUser)
+                emit(ResultData.SuccessData(authMapper.fromLoginResponseToAuthModel(responseBody)))
+            }
+        }
+    }
+
     // Get JWT Token: Retrieve the token from local data
     override suspend fun getJwt(): Flow<String?> {
         return flow {

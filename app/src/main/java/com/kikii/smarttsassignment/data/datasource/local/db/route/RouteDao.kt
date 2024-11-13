@@ -1,6 +1,7 @@
 package com.kikii.smarttsassignment.data.datasource.local.db.route
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RouteDao {
@@ -35,5 +36,5 @@ interface RouteDao {
 
     // Get all routes
     @Query("SELECT * FROM route")
-    suspend fun getAllRoutes(): List<RouteEntity>
+    fun getAllRoutes(): Flow<List<RouteEntity>>
 }

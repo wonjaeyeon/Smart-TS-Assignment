@@ -17,7 +17,7 @@ interface SmartTsAPIService {
 
     @GET("route/driver")
     suspend fun getDriverRoute(
-        @Header("Authentication") tokenWithPrefix: String
+        @Header("Authorization") tokenWithPrefix: String
     ): Response<RouteResponse>
 
     @GET("dispatch/driver/{date}")

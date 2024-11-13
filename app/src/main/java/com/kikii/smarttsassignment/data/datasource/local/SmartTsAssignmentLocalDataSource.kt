@@ -1,11 +1,13 @@
 package com.kikii.smarttsassignment.data.datasource.local
 
+import com.kikii.smarttsassignment.data.common.ResultData
 import com.kikii.smarttsassignment.data.datasource.local.db.auth.AuthDao
 import com.kikii.smarttsassignment.data.datasource.local.db.auth.AuthEntity
 import com.kikii.smarttsassignment.data.datasource.local.db.dispatch.DispatchDao
 import com.kikii.smarttsassignment.data.datasource.local.db.dispatch.DispatchEntity
 import com.kikii.smarttsassignment.data.datasource.local.db.route.RouteDao
 import com.kikii.smarttsassignment.data.datasource.local.db.route.RouteEntity
+import com.kikii.smarttsassignment.data.model.RouteModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -80,9 +82,8 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
     }
 
     // get all routes
-    suspend fun getAllRoutes(): List<RouteEntity> {
-        return routeDao.getAllRoutes()
-    }
+    val localRoute : Flow<List<RouteEntity>> = routeDao.getAllRoutes()
+
 
     // get all routes by driver
     suspend fun getRoutesByDriver(driverId: Long): List<RouteEntity> {
@@ -105,7 +106,7 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
     }
 
     // get all
-    suspend fun getAllDispatches(): List<DispatchEntity> {
+    fun getAllDispatches(): List<DispatchEntity> {
         return dispatchDao.getAllDispatches()
     }
 }

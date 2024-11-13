@@ -34,5 +34,5 @@ interface DispatchDao {
 
     // Retrieve all dispatch entries
     @Query("SELECT * FROM dispatch")
-    suspend fun getAllDispatches(): List<DispatchEntity>
+    fun getAllDispatches(): List<DispatchEntity>
 }

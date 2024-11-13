@@ -16,6 +16,9 @@ interface AuthRepository {
     //suspend fun getAuthModel(): Flow<ResultData<AuthModel?>>
     val currentAuthModel: Flow<ResultData<AuthModel>>
 
+    // update auth
+    suspend fun updateAuthModel(): Flow<ResultData<AuthModel?>>
+
     // jwt
     suspend fun getJwt(): Flow<String?>
 
