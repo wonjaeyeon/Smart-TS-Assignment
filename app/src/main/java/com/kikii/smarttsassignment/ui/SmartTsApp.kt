@@ -5,10 +5,12 @@ import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.*
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.window.layout.DisplayFeature
 import androidx.window.layout.FoldingFeature
+import com.kikii.smarttsassignment.ui.feature.auth.AuthUiState
 import com.kikii.smarttsassignment.ui.feature.auth.LoginScreen
 import com.kikii.smarttsassignment.ui.feature.auth.LoginViewModel
 import com.kikii.smarttsassignment.ui.navigation.SmartTsNavHost
@@ -60,7 +62,14 @@ fun SmartTsApp(
     val currentDestination = navBackStackEntry?.destination
 
     // 인증 상태를 관리하는 mutableStateOf
-    var isAuthenticated by remember { mutableStateOf(false) }
+    val user = loginViewModel.authUiState.collectAsStateWithLifecycle()
+
+
+    val isAuthenticated = if (user.value is AuthUiState.Success) {
+        true
+    } else {
+        false
+    }
 
     if(isAuthenticated){
     Surface {
@@ -78,7 +87,7 @@ fun SmartTsApp(
     }}
     else{
         LoginScreen {
-            isAuthenticated = true // onLoginSuccess 콜백 호출 시 실행됨
+            //isAuthenticated = true // onLoginSuccess 콜백 호출 시 실행됨
         }
     }
 }

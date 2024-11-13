@@ -1,6 +1,6 @@
 package com.kikii.smarttsassignment.data.model
 
-data class LoginModel (
+data class AuthModel (
     val userId: Long,
 
     val loginId: String,

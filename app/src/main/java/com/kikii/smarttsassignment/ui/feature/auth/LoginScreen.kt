@@ -126,10 +126,10 @@ fun LoginScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { viewModel.onLoginClick(onLoginSuccess) },
+                onClick = { viewModel.login(onLoginSuccess) },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("로그인")
+                Text(stringResource(id = R.string.login))
             }
 
             viewModel.errorMessage?.let {

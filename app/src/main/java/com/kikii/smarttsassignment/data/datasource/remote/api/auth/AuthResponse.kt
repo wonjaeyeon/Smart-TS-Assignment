@@ -3,7 +3,7 @@ package com.kikii.smarttsassignment.data.datasource.remote.api.auth
 import com.google.gson.annotations.SerializedName
 
 // check
-data class LoginResponse(
+data class AuthResponse(
     @SerializedName("status")
     val status: Int,
 
@@ -11,7 +11,7 @@ data class LoginResponse(
     val message: String,
 
     @SerializedName("object")
-    val `object`: Object
+    val `object`: Object?
 )
 
 data class Object(

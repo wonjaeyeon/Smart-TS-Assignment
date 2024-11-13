@@ -20,6 +20,4 @@ data class DispatchResponse (
 
     @SerializedName("busId")
     val busId: String,
-
-
 )

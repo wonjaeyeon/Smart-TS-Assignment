@@ -11,7 +11,7 @@ data class DispatchEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
 
-    @ColumnInfo(name = "id")
+    @ColumnInfo(name = "dispatcherId")
     val dispatchId: Long,
 
     @ColumnInfo(name = "driverId")
@@ -33,7 +33,7 @@ data class DispatchEntity(
     val busNumber: String,
 
     @ColumnInfo(name = "busType")
-    val busType: Enum<BusType>,
+    val busType: BusType,
 
     @ColumnInfo(name = "actualStartTime")
     val actualStartTime: Date,
@@ -56,4 +56,4 @@ data class DispatchEntity(
     @ColumnInfo(name = "passengerList")
     val passengerList: List<String>
 
-    )
+)

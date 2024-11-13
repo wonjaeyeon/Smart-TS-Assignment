@@ -33,7 +33,8 @@ fun SettingScreen() {
 fun SettingNavHost(navController: NavHostController = rememberNavController()) {
     NavHost(navController = navController, startDestination = SettingRoute.MainSettings.toString()) {
         composable(SettingRoute.MainSettings.toString()) {
-            MainSettingsScreen(navController)
+            MainSettingsScreen(
+                navController = navController)
         }
         composable(SettingRoute.NotificationSettings.toString()) {
             NotificationSettingsScreen(navController)
