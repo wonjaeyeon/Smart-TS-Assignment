@@ -2,7 +2,7 @@ package com.kikii.smarttsassignment.domain.usecases.route
 
 import com.kikii.smarttsassignment.data.common.ResultData
 import com.kikii.smarttsassignment.data.model.RouteModel
-import com.kikii.smarttsassignment.data.repository.AuthRouteRepository
+import com.kikii.smarttsassignment.data.repository.composite_repo.auth_route.AuthRouteRepository
 import com.kikii.smarttsassignment.domain.di.coroutine.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow

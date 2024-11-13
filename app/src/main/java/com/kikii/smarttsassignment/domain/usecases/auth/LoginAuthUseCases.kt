@@ -2,7 +2,7 @@ package com.kikii.smarttsassignment.domain.usecases.auth
 
 import com.kikii.smarttsassignment.data.common.ResultData
 import com.kikii.smarttsassignment.data.model.AuthModel
-import com.kikii.smarttsassignment.data.repository.AuthRepository
+import com.kikii.smarttsassignment.data.repository.default_repo.auth.AuthRepository
 import com.kikii.smarttsassignment.domain.di.coroutine.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject

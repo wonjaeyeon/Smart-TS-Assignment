@@ -1,6 +1,7 @@
 package com.kikii.smarttsassignment.data.datasource.local.db.dispatch
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface DispatchDao {
@@ -19,7 +20,7 @@ interface DispatchDao {
 
     // Get a dispatch by driverId, routeId, and startOrder to find duplicates
     @Query("SELECT * FROM dispatch WHERE driverId = :driverId AND routeId = :routeId AND startOrder = :startOrder LIMIT 1")
-    suspend fun findDuplicateDispatch(driverId: Long, routeId: Long, startOrder: String): DispatchEntity?
+    suspend fun findDuplicateDispatch(driverId: Long, routeId: Long, startOrder: Long): DispatchEntity?
 
     // Upsert logic: check for duplicates and replace if necessary
     @Transaction
@@ -34,5 +35,5 @@ interface DispatchDao {
 
     // Retrieve all dispatch entries
     @Query("SELECT * FROM dispatch")
-    fun getAllDispatches(): List<DispatchEntity>
+    fun getAllDispatches(): Flow<List<DispatchEntity>>
 }

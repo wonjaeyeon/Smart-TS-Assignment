@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.kikii.smarttsassignment.ui.feature.settings.sub.AccountSettingsScreen
 import com.kikii.smarttsassignment.ui.feature.settings.sub.NotificationSettingsScreen
 import com.kikii.smarttsassignment.ui.feature.settings.sub.PrivacySettingsScreen
 import kotlinx.serialization.Serializable
@@ -21,6 +22,8 @@ sealed interface SettingRoute {
     object NotificationSettings : SettingRoute
     @Serializable
     object PrivacySettings : SettingRoute
+    @Serializable
+    object AccountSettings : SettingRoute
 }
 
 @Composable
@@ -41,6 +44,9 @@ fun SettingNavHost(navController: NavHostController = rememberNavController()) {
         }
         composable(SettingRoute.PrivacySettings.toString()) {
             PrivacySettingsScreen(navController)
+        }
+        composable(SettingRoute.AccountSettings.toString()) {
+            AccountSettingsScreen(navController = navController)
         }
     }
 }

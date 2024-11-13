@@ -80,7 +80,7 @@ data class Object(
     val unixEndTime: Long?,
 
     @SerializedName("busRound")
-    val busRound: Int,
+    val busRound: Long,
 
     @SerializedName("remainEnd")
     val remainEnd: String?,

@@ -15,7 +15,7 @@ import com.kikii.smarttsassignment.data.datasource.local.db.route.RouteEntity
         AuthEntity::class,
         RouteEntity::class,
         DispatchEntity::class,
-               ],
+   ],
     version = 1,
     exportSchema = true
 )

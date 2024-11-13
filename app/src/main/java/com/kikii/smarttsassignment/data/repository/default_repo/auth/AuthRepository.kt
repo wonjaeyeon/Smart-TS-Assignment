@@ -1,4 +1,4 @@
-package com.kikii.smarttsassignment.data.repository
+package com.kikii.smarttsassignment.data.repository.default_repo.auth
 
 import com.kikii.smarttsassignment.data.common.ResultData
 import com.kikii.smarttsassignment.data.model.AuthModel

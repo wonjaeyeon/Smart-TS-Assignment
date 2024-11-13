@@ -23,5 +23,5 @@ interface SmartTsAPIService {
     @GET("dispatch/driver/{date}")
     suspend fun getDriverDispatch(
         @Header("Authorization") tokenWithPrefix: String,
-        @Field("date") date: String): DispatchResponse
+        @Path("date") date: String): Response<DispatchResponse>
 }

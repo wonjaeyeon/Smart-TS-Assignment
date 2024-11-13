@@ -47,7 +47,7 @@ fun MainSettingsScreen(
             title = "Account Settings",
             subtitle = "Manage your account preferences",
             image = Icons.Filled.Person,
-            navigationId = SettingRoute.PrivacySettings.toString()
+            navigationId = SettingRoute.AccountSettings.toString()
         )
     )
 

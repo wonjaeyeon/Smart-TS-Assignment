@@ -1,6 +1,7 @@
 package com.kikii.smarttsassignment.data.mapper.di
 
 import com.kikii.smarttsassignment.data.mapper.AuthMapper
+import com.kikii.smarttsassignment.data.mapper.DispatchMapper
 import com.kikii.smarttsassignment.data.mapper.RouteMapper
 import dagger.Module
 import dagger.Provides
@@ -22,5 +23,11 @@ object MapperModule {
     @Singleton
     fun provideRouteMapper(): RouteMapper {
         return RouteMapper
+    }
+
+    @Provides
+    @Singleton
+    fun provideDispatchMapper(): DispatchMapper {
+        return DispatchMapper
     }
 }

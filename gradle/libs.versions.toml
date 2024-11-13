@@ -138,6 +138,7 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 junit-junit = { group = "junit", name = "junit", version.ref = "junitJunit" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
 
+
 [plugins]
 ## DEFAULT PLUGINS
 android-application = { id = "com.android.application", version.ref = "agp" } # Default

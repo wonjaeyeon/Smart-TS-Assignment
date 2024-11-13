@@ -25,7 +25,7 @@ class SmartTsAssignmentRemoteDataSource @Inject constructor(
         ))
     }
 
-    suspend fun getDriverDispatch(token : String, date: String): Flow<DispatchResponse> {
+    suspend fun getDriverDispatch(token : String, date: String): Flow<Response<DispatchResponse>> {
         return flowOf(smartTsAPIService.getDriverDispatch(
             tokenWithPrefix = "Bearer $token",
             date = date))

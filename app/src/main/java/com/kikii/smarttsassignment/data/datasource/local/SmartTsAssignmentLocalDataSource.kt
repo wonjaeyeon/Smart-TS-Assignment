@@ -97,6 +97,12 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
         return dispatchDao.insertDispatch(dispatchEntity)
     }
 
+    suspend fun insertListOfDispatches(dispatchEntities: List<DispatchEntity>) {
+        for (dispatchEntity in dispatchEntities) {
+            dispatchDao.insertDispatch(dispatchEntity)
+        }
+    }
+
     suspend fun updateDispatch(dispatchEntity: DispatchEntity) {
         dispatchDao.updateDispatch(dispatchEntity)
     }
@@ -106,7 +112,5 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
     }
 
     // get all
-    fun getAllDispatches(): List<DispatchEntity> {
-        return dispatchDao.getAllDispatches()
-    }
+    val allLocalDispatches : Flow<List<DispatchEntity>> = dispatchDao.getAllDispatches()
 }

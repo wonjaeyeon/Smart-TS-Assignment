@@ -1,10 +1,8 @@
 package com.kikii.smarttsassignment.domain.di
 
-import com.kikii.smarttsassignment.data.repository.AuthRouteRepository
-import com.kikii.smarttsassignment.data.repository.RouteRepository
+import com.kikii.smarttsassignment.data.repository.composite_repo.auth_route.AuthRouteRepository
 import com.kikii.smarttsassignment.domain.di.coroutine.DefaultDispatcher
 import com.kikii.smarttsassignment.domain.usecases.route.FetchRouteUseCases
-import com.kikii.smarttsassignment.domain.usecases.route.GetRouteUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +20,4 @@ object RouteUseCaseModule {
         authRouteRepository: AuthRouteRepository,
         @DefaultDispatcher defaultDispatcher: CoroutineDispatcher
     ) = FetchRouteUseCases(authRouteRepository, defaultDispatcher)
-
-
 }

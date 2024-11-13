@@ -1,7 +1,6 @@
 package com.kikii.smarttsassignment.domain.di
 
-import com.kikii.smarttsassignment.data.repository.AuthRepository
-import com.kikii.smarttsassignment.data.repository.DefaultAuthRepository
+import com.kikii.smarttsassignment.data.repository.default_repo.auth.AuthRepository
 import com.kikii.smarttsassignment.domain.di.coroutine.DefaultDispatcher
 import com.kikii.smarttsassignment.domain.usecases.auth.GetAuthUseCases
 import com.kikii.smarttsassignment.domain.usecases.auth.LoginAuthUseCases
