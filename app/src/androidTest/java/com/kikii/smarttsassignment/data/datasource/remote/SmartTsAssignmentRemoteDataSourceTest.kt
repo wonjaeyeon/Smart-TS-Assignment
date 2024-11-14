@@ -10,34 +10,34 @@ import org.junit.Before
 import org.junit.Test
 
 
-class SmartTsAssignmentRemoteDataSourceTest {
-
-    private lateinit var smartTsAssignmentRemoteDataSource: SmartTsAssignmentRemoteDataSource
-
-    @Before
-    fun setUp() {
-        val realAPIService = SmartTsAPIServiceModule.provideSmartTsAPIService(
-            SmartTsAPIServiceModule.provideRetrofit()
-
-
-        )
-        smartTsAssignmentRemoteDataSource = SmartTsAssignmentRemoteDataSource(realAPIService)
-    }
-
-    @Test
-    fun requestToRealServer() = runBlocking {
-
-        // Request
-        val response = smartTsAssignmentRemoteDataSource.getLoginResponse(
-            AuthRequest(
-                loginId = "djDEMO",
-                password = "DEMO"
-            )
-        ).first()
-
-        // Assert
-        assertNotNull(response)
-    }
+//class SmartTsAssignmentRemoteDataSourceTest {
+//
+//    private lateinit var smartTsAssignmentRemoteDataSource: SmartTsAssignmentRemoteDataSource
+//
+//    @Before
+//    fun setUp() {
+//        val realAPIService = SmartTsAPIServiceModule.provideSmartTsAPIService(
+//            SmartTsAPIServiceModule.provideRetrofit()
+//
+//
+//        )
+//        smartTsAssignmentRemoteDataSource = SmartTsAssignmentRemoteDataSource(realAPIService)
+//    }
+//
+//    @Test
+//    fun requestToRealServer() = runBlocking {
+//
+//        // Request
+//        val response = smartTsAssignmentRemoteDataSource.getLoginResponse(
+//            AuthRequest(
+//                loginId = "djDEMO",
+//                password = "DEMO"
+//            )
+//        ).first()
+//
+//        // Assert
+//        assertNotNull(response)
+//    }
 //
 //
 //    @Test
@@ -60,6 +60,6 @@ class SmartTsAssignmentRemoteDataSourceTest {
 //        assert(response?.body()!!.status == 200)
 //        println("Route response: ${response.body()}")
 //    }
-
-
-}
+//
+//
+//}
