@@ -88,6 +88,9 @@ fun LoginScreen(
     viewModel: LoginViewModel = hiltViewModel(),
     onLoginSuccess: () -> Unit
 ) {
+//    val loginId by remember { derivedStateOf { viewModel.loginId } }
+//    val password by remember { derivedStateOf { viewModel.password } }
+
     Surface(
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -108,6 +111,7 @@ fun LoginScreen(
             SmartTsOutlinedTextField(
                 label = stringResource(id = R.string.id),
                 value = viewModel.loginId,
+                //value = loginId,
                 onValueChange = viewModel::onLoginIdChange,
                 observable = true,
                 modifier = Modifier.fillMaxWidth()
@@ -118,6 +122,7 @@ fun LoginScreen(
             SmartTsOutlinedTextField(
                 label = stringResource(id = R.string.password),
                 value = viewModel.password,
+                //value = password,
                 onValueChange = viewModel::onPasswordChange,
                 observable = false,
                 modifier = Modifier.fillMaxWidth()

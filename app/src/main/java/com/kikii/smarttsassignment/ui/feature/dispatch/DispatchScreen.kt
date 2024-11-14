@@ -1,15 +1,23 @@
 package com.kikii.smarttsassignment.ui.feature.dispatch
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DirectionsBus
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -17,6 +25,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.kikii.smarttsassignment.R
 import com.kikii.smarttsassignment.data.model.DispatchModel
 import com.kikii.smarttsassignment.ui.feature.dispatch.components.CustomDatePickerDialog
+import com.kikii.smarttsassignment.ui.feature.dispatch.components.DispatchItem
 
 //
 //@Composable
@@ -192,20 +201,21 @@ fun DispatchScreen(
 }
 
 
-@Composable
-fun DispatchItem(dispatch: DispatchModel?) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-    ) {
-        Text("Driver Name: ${dispatch?.driverName}")
-        Text("Route Name: ${dispatch?.routeName}")
-        Text("Bus Number: ${dispatch?.busNumber}")
-        Text("Start Time: ${dispatch?.startTime}")
-        Spacer(modifier = Modifier.height(8.dp))
-    }
-}
+//@Composable
+//fun DispatchItem(dispatch: DispatchModel?) {
+//    Column(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .padding(8.dp)
+//    ) {
+//        Text("Driver Name: ${dispatch?.driverName}")
+//        Text("Route Name: ${dispatch?.routeName}")
+//        Text("Bus Number: ${dispatch?.busNumber}")
+//        Text("Start Time: ${dispatch?.startTime}")
+//        Spacer(modifier = Modifier.height(8.dp))
+//    }
+//}
+
 
 
 @Preview

@@ -29,6 +29,10 @@ class LoginViewModel @Inject constructor(
     var errorMessage by mutableStateOf<String?>(null)
         private set
 
+    // Track the logout state
+    var loggedOut by mutableStateOf(false)
+
+
     // Define authUiState as StateFlow
     val authUiState: StateFlow<AuthUiState> = getAuthUseCases.getAuthModel()
         .map<ResultData<AuthModel?>, AuthUiState> { result ->
@@ -53,19 +57,9 @@ class LoginViewModel @Inject constructor(
     // Function to handle login logic
     fun login(onLoginSuccess: () -> Unit) {
         viewModelScope.launch {
-//            if (loginId == "djDEMO" && password == "DEMO") { // Sample login credentials
-//                onLoginSuccess()
-//                errorMessage = null // Clear any previous error
-//            } else {
-//                errorMessage = "로그인 실패: 아이디 또는 비밀번호가 잘못되었습니다."
-//            }
+
             loginAuthUseCases.login(loginId, password).collect { authModel ->
-//                if (authModel == ResultData.SuccessData) {
-//                    onLoginSuccess()
-//                    errorMessage = null // Clear any previous error
-//                } else {
-//                    errorMessage = "로그인 실패: 아이디 또는 비밀번호가 잘못되었습니다."
-//                }
+
                 when (authModel) {
                     is ResultData.SuccessData -> {
                         onLoginSuccess()
@@ -77,6 +71,35 @@ class LoginViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    // Function to handle logout logic
+    fun logout(onLogoutComplete: () -> Unit) {
+        viewModelScope.launch {
+
+            logoutAuthUseCases.logout().collect { isLoggedOut ->
+
+                if (isLoggedOut) {
+                    println("Logged out")
+
+                    loggedOut = true // Set loggedOut to true on successful logout
+
+                    loginId = ""
+                    password = ""
+                    resetCredentials() // Clear loginId and password
+                    errorMessage = null // Clear any previous error
+
+                    onLogoutComplete() // Callback to signal logout completion
+                }
+            }
+        }
+    }
+
+
+    // New function to reset login credentials
+    private fun resetCredentials() {
+        loginId = ""
+        password = ""
     }
 
 

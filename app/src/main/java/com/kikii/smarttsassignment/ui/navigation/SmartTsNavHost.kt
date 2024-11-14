@@ -1,11 +1,14 @@
 package com.kikii.smarttsassignment.ui.navigation
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.window.layout.DisplayFeature
+import com.kikii.smarttsassignment.ui.feature.auth.LoginViewModel
 import com.kikii.smarttsassignment.ui.feature.dispatch.DispatchScreen
 import com.kikii.smarttsassignment.ui.feature.empty.EmptyComingSoon
 import com.kikii.smarttsassignment.ui.feature.route.RouteScreen
@@ -19,7 +22,7 @@ fun SmartTsNavHost(
     contentType: ReplyContentType,
     displayFeatures: List<DisplayFeature>,
     navigationType: ReplyNavigationType,
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
 ) {
 
     NavHost(

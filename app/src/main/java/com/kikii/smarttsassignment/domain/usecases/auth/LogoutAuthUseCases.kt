@@ -13,7 +13,7 @@ class LogoutAuthUseCases @Inject constructor(
     @DefaultDispatcher private val defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
 ) {
 
-    suspend fun logout(email: String, password: String): Flow<Boolean> =
+    suspend fun logout(): Flow<Boolean> =
         withContext(defaultDispatcher) {
             authRepository.logout()
         }
