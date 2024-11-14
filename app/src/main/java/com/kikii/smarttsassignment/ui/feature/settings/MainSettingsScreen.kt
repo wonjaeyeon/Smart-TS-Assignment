@@ -28,20 +28,20 @@ fun MainSettingsScreen(
 ) {
 
     val listItems = listOf(
-        ListItem(
-            id = 1,
-            title = "Notification Settings",
-            subtitle = "Manage your notifications",
-            image = Icons.Filled.Notifications,
-            navigationId = SettingRoute.NotificationSettings.toString()
-        ),
-        ListItem(
-            id = 2,
-            title = "Privacy Settings",
-            subtitle = "Manage your privacy preferences",
-            image = Icons.Filled.Lock,
-            navigationId = SettingRoute.PrivacySettings.toString()
-        ),
+//        ListItem(
+//            id = 1,
+//            title = "Notification Settings",
+//            subtitle = "Manage your notifications",
+//            image = Icons.Filled.Notifications,
+//            navigationId = SettingRoute.NotificationSettings.toString()
+//        ),
+//        ListItem(
+//            id = 2,
+//            title = "Privacy Settings",
+//            subtitle = "Manage your privacy preferences",
+//            image = Icons.Filled.Lock,
+//            navigationId = SettingRoute.PrivacySettings.toString()
+//        ),
         ListItem(
             id = 3,
             title = "Account Settings",

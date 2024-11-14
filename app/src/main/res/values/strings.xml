@@ -17,6 +17,7 @@
 
     <string name="route_screen_title">Route</string>
     <string name="route_screen_subtitle">This screen will help you learn about navigation in Jetpack Compose</string>
+    <string name="route_screen_driver_icon_content_description">Driver Icon</string>
 
     <string name="dispatch_screen_title">Dispatch</string>
     <string name="dispatch_screen_subtitle">There are no Dispatches</string>

@@ -13,8 +13,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object SmartTsAPIServiceModule {
 
-    private val BASE_URL = "http://168.126.147.134:18080/"
-    //private val BASE_URL = "http://10.0.2.2:8080/"
+    //private val BASE_URL = "http://168.126.147.134:18080/"
+    private val BASE_URL = "http://10.0.2.2:8080/"
 
     @Provides
     @Singleton
