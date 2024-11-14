@@ -18,6 +18,7 @@
 </p>
 
 
+
 # OverView
 
 - 개발 기간 : 2024.11.11 ~ 2024.11.14
@@ -35,6 +36,9 @@
 ### Architecture Pattern
 
 - Architecture Pattern: MVVM Pattern
+<p align="center">
+<img src="https://github.com/user-attachments/assets/dbb903ad-3534-44ee-9aed-7aa82f68c633" width="90%" height="40%">
+</p>
 
 
 ## Technology Stack
