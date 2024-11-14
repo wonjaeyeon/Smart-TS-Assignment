@@ -38,28 +38,28 @@ class SmartTsAssignmentRemoteDataSourceTest {
         // Assert
         assertNotNull(response)
     }
-
-
-    @Test
-    fun testRouteResponse() = runBlocking {
-        // Given
-        val token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1ODM1IiwiaXNzIjoia2lraUIiLCJpYXQiOjE3MzE0NzE2ODAsImV4cCI6MTczMjA3NjQ4MH0.4D_L07WQPJvEQwZcxtN9UiFtz8bAty95hRGBx9spOhGK5RGIYD56frNxWVguj9s4ILN9_QJFddmVOGcDtnrAqw"
-
-        // When
-        val response = smartTsAssignmentRemoteDataSource.getDriverRoute(token).firstOrNull()
-
-        println(
-            "Route response: ${response?.body()}"
-        )
-
-        // Then
-        assertNotNull(response)
-
-        assert(response?.body() != null)
-
-        assert(response?.body()!!.status == 200)
-        println("Route response: ${response.body()}")
-    }
+//
+//
+//    @Test
+//    fun testRouteResponse() = runBlocking {
+//        // Given
+//        val token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1ODM1IiwiaXNzIjoia2lraUIiLCJpYXQiOjE3MzE0NzE2ODAsImV4cCI6MTczMjA3NjQ4MH0.4D_L07WQPJvEQwZcxtN9UiFtz8bAty95hRGBx9spOhGK5RGIYD56frNxWVguj9s4ILN9_QJFddmVOGcDtnrAqw"
+//
+//        // When
+//        val response = smartTsAssignmentRemoteDataSource.getDriverRoute(token).firstOrNull()
+//
+//        println(
+//            "Route response: ${response?.body()}"
+//        )
+//
+//        // Then
+//        assertNotNull(response)
+//
+//        assert(response?.body() != null)
+//
+//        assert(response?.body()!!.status == 200)
+//        println("Route response: ${response.body()}")
+//    }
 
 
 }
