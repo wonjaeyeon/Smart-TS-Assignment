@@ -116,13 +116,13 @@ jobs:
           distribution: 'zulu'
           cache: gradle
       - name: Run integration tests
-        run: ./gradlew integrationTest --stacktrace
+        run: ./gradlew androidTest --stacktrace
       - name: Upload integration test reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: integration-test-reports
-          path: ./app/build/reports/tests/integrationTest
+          path: ./app/build/reports/tests/androidTest
 
   package:
     runs-on: ubuntu-latest
