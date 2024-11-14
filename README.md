@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # SMART TS ASSIGNMENT
 
 <img width="80" src="https://github.com/user-attachments/assets/0ecf41cc-5c0f-426a-852c-bcaf78bfffd9">
@@ -75,6 +69,9 @@
 - JUnit (version 4.13.2)
 - JUnit Jupiter (version 5.8.1)
 - AndroidX Test (version 1.6.1)
+
+#### CI/CD:
+- Github Actions(checkout@v4)
 
 ### Foldering
 ```
