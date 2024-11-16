@@ -14,52 +14,7 @@ class CompositeAuthDispatchRepository @Inject constructor(
     private val dispatchRepository: DispatchRepository,
     private val connectivityManager: ConnectivityManager  // Injected ConnectivityManager
 ) : AuthDispatchRepository {
-//
-//    override suspend fun fetchLatestDispatches(date: String): Flow<ResultData<List<DispatchModel?>>> {
-//        // Attempt to get the JWT token from the auth repository
-//        val jwt = authRepository.getJwt().firstOrNull()
-//
-//        // Update the auth model if JWT is not available
-//        if (jwt == null) {
-//            authRepository.updateAuthModel()
-//        }
-//
-//        // Check if JWT is available and Wi-Fi is connected
-//        if (jwt != null && isWifiConnected()) {
-//            //return dispatchRepository.fetchLatestDispatch(jwt, date)
-//            val result = dispatchRepository.fetchLatestDispatch(jwt, date).firstOrNull()
-//            when (result) {
-//                is ResultData.SuccessData -> {
-//                    // If the fetch was successful, return the fetched dispatch models
-//                    return flow{
-//                        emit(ResultData.SuccessData(result.data))
-//                    }
-//                }
-//                is ResultData.ErrorData -> {
-//                    // 400
-//                    if (result.exception.message?.contains("400") == true) {
-//                        // If the fetch failed due to an invalid JWT, update the auth model and try again
-//                        println("authRepository.updateAuthModel()")
-//                        authRepository.updateAuthModel()
-//                        println("authRepository.getJwt().firstOrNull()")
-//                        val newJwt = authRepository.getJwt().firstOrNull()
-//                        println("newJwt: $newJwt")
-//                        if (newJwt != null) {
-//                            println("dispatchRepository.fetchLatestDispatch(newJwt, date) : ${dispatchRepository.fetchLatestDispatch(newJwt, date)}")
-//                            return dispatchRepository.fetchLatestDispatch(newJwt, date)
-//                        }
-//                    }
-//                    // If the fetch failed, return locally stored dispatch models
-//                    return dispatchRepository.findDispatchesByDate(date)
-//                }
-//
-//                null -> TODO()
-//            }
-//        }
-//
-//        // If no JWT or no Wi-Fi, return locally stored dispatch models
-//        return dispatchRepository.findDispatchesByDate(date)
-//    }
+
 override suspend fun fetchLatestDispatches(date: String): Flow<ResultData<List<DispatchModel?>>> {
     return flow {
         // Attempt to get the JWT token from the auth repository
@@ -126,6 +81,8 @@ override suspend fun fetchLatestDispatches(date: String): Flow<ResultData<List<D
             // If no JWT or no Wi-Fi, return locally stored dispatch models
             emitAll(dispatchRepository.findDispatchesByDate(date))
         }
+    }.catch {
+        emit(ResultData.ErrorData(it.message?.let { message -> Exception(message) } ?: Exception("Unknown error")))
     }
 }
 

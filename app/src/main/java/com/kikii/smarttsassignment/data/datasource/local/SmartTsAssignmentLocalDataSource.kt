@@ -75,6 +75,10 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
         routeDao.deleteRoute(routeEntity)
     }
 
+    suspend fun deleteAllRoutes() {
+        routeDao.deleteAllRoutes()
+    }
+
     suspend fun getRouteById(routeId: Long): RouteEntity? {
         return routeDao.getRouteById(routeId)
     }
@@ -107,6 +111,10 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
 
     suspend fun deleteDispatch(dispatchEntity: DispatchEntity) {
         dispatchDao.deleteDispatch(dispatchEntity)
+    }
+
+    suspend fun deleteAllDispatches() {
+        dispatchDao.deleteAllDispatches()
     }
 
     suspend fun findDuplicateDispatch(driverId: Long, routeId: Long, startOrder: Long): DispatchEntity? {

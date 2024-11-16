@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 interface AuthRouteRepository {
     suspend fun fetchLatestRoute() : Flow<ResultData<RouteModel?>>
 
-    val localRouteModel : RouteRepository
+    val localRouteModel : Flow<ResultData<RouteModel?>>
 
 
 }

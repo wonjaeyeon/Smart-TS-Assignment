@@ -60,6 +60,8 @@ class DefaultAuthRepository @Inject constructor(
             // Clear token locally
             // TODO : modifiy to just DELETE ALL USERS
             localDataSource.deleteAllUsers()
+            localDataSource.deleteAllRoutes()
+            localDataSource.deleteAllDispatches()
             emit(true)
         }
     }
@@ -73,88 +75,6 @@ class DefaultAuthRepository @Inject constructor(
     }
 
     // Update Auth Model: Update the user's info by fetching the latest data from the server
-//    override suspend fun updateAuthModel(): Flow<ResultData<AuthModel?>> {
-//        println("updateAuthModel ---------------------------------")
-//        return flow {
-//            try {
-//                println("updateAuthModel try ---------------------------------")
-//                val user = localDataSource.currentUsers.firstOrNull()
-//                if (user.isNullOrEmpty()) {
-//                    println("No user found")
-//
-//                    emit(
-//                        ResultData.ErrorData(
-//                            Exception("No user found")
-//                        )
-//                    )
-//                    return@flow
-//                }
-//
-//                val loginId = user.first().loginId
-//                //val token = user.first().token
-//                val password = user.first().password
-//
-//                val response = remoteDataSource.getLoginResponse(
-//                    AuthRequest(loginId, password)
-//                ).firstOrNull()
-//
-//                println("response: $response")
-//                println("response.body().object: ${response?.body()?.`object`}")
-//                println("response.body().object.token: ${response?.body()?.`object`?.token}")
-//
-//                if (response == null) {
-//                    println("No response from server")
-//
-//                    emit(
-//                        ResultData.ErrorData(
-//                            Exception("No response from server")
-//                        )
-//                    )
-//                    return@flow
-//                }
-//
-//                val responseBody = response.body()
-//                if (responseBody == null) {
-//                    println("No response from server or invalid response")
-//
-//                    emit(
-//                        ResultData.ErrorData(
-//                            Exception("No response from server or invalid response")
-//                        )
-//                    )
-//                    return@flow
-//                }
-//
-//                if (responseBody.status == 400) {
-//                    println("Invalid token")
-//
-//                    emit(
-//                        ResultData.ErrorData(
-//                            Exception("Invalid token")
-//                        )
-//                    )
-//                    return@flow
-//                }
-//
-//                if (responseBody.status == 200) {
-//
-//                    println("User updated")
-//                    val updatedUser = authMapper.fromAuthResponseToAuthEntity(responseBody, password)
-//                    localDataSource.updateUser(updatedUser)
-//                    emit(ResultData.SuccessData(authMapper.fromLoginResponseToAuthModel(responseBody)))
-//                }
-//            } catch (e: java.net.ConnectException) {
-//                println("Failed to connect to the server. Please check your connection.")
-//
-//                emit(ResultData.ErrorData(Exception("Failed to connect to the server. Please check your connection.")))
-//            } catch (e: Exception) {
-//                println("An unexpected error occurred: ${e.message}")
-//
-//                emit(ResultData.ErrorData(Exception("An unexpected error occurred: ${e.message}")))
-//            }
-//        }
-//    }
-
     override suspend fun updateAuthModel(): Flow<ResultData<AuthModel?>> {
         println("updateAuthModel ---------------------------------")
         return flow {
