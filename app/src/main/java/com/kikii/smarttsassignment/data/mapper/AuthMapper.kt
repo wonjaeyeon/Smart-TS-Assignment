@@ -7,12 +7,13 @@ import com.kikii.smarttsassignment.data.model.AuthModel
 object AuthMapper {
 
     // Convert LoginResponse to AuthEntity for local storage
-    fun fromAuthResponseToAuthEntity(response: AuthResponse): AuthEntity {
+    fun fromAuthResponseToAuthEntity(response: AuthResponse, password : String): AuthEntity {
         val obj = response.`object`
             ?: throw IllegalArgumentException("AuthResponse.object cannot be null")
         return AuthEntity(
             userId = obj.userId,
             loginId = obj.loginId,
+            password = password,
             name = obj.name,
             role = obj.role,
             userRoleId = obj.userRoleId,
@@ -77,10 +78,11 @@ object AuthMapper {
     }
 
     // Convert AuthModel to AuthEntity for local storage
-    fun fromAuthModelToAuthEntity(model: AuthModel): AuthEntity {
+    fun fromAuthModelToAuthEntity(model: AuthModel, password: String): AuthEntity {
         return AuthEntity(
             userId = model.userId,
             loginId = model.loginId,
+            password = password,
             name = model.name,
             role = model.role,
             userRoleId = model.userRoleId,

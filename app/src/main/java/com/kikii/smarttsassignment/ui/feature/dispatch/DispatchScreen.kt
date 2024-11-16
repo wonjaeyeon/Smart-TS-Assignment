@@ -8,10 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CalendarMonth
-import androidx.compose.material.icons.filled.CalendarToday
-import androidx.compose.material.icons.filled.DirectionsBus
-import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -208,8 +205,18 @@ fun DispatchScreen(
             is DispatchUiState.Loading -> Text("Loading dispatch data...")
             is DispatchUiState.Success -> {
                 val dispatchList = (dispatchUiState as DispatchUiState.Success).data
-                if (dispatchList.isNullOrEmpty()) {
-                    Text("There are no dispatches")
+                if (dispatchList.isEmpty()) {
+
+                    // "No bus" icon
+                    Icon(
+                        imageVector = Icons.Default.EventBusy,
+                        contentDescription = "No Bus",
+                        modifier = Modifier.size(64.dp),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text(stringResource(id = R.string.dispatch_screen_no_dispatches))
                 } else {
                     LazyColumn {
                         items(dispatchList) { dispatch ->

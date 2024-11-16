@@ -61,6 +61,7 @@ import java.util.*
 @Entity(tableName = "dispatch")
 data class DispatchEntity(
     @PrimaryKey(autoGenerate = true) val id: Long? = null, // Local primary key
+    val date : String,
     val startOrder: Long,
     val routeName: String,
     val routeId: Long,

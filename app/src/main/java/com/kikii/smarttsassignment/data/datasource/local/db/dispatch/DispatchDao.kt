@@ -22,6 +22,9 @@ interface DispatchDao {
     @Query("SELECT * FROM dispatch WHERE driverId = :driverId AND routeId = :routeId AND startOrder = :startOrder LIMIT 1")
     suspend fun findDuplicateDispatch(driverId: Long, routeId: Long, startOrder: Long): DispatchEntity?
 
+    @Query("SELECT * FROM dispatch WHERE date = :date")
+    suspend fun findDispatchesByDate(date: String): List<DispatchEntity>
+
     // Upsert logic: check for duplicates and replace if necessary
     @Transaction
     suspend fun upsertDispatch(dispatch: DispatchEntity) {

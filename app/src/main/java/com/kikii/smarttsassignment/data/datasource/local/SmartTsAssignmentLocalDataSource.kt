@@ -1,13 +1,11 @@
 package com.kikii.smarttsassignment.data.datasource.local
 
-import com.kikii.smarttsassignment.data.common.ResultData
 import com.kikii.smarttsassignment.data.datasource.local.db.auth.AuthDao
 import com.kikii.smarttsassignment.data.datasource.local.db.auth.AuthEntity
 import com.kikii.smarttsassignment.data.datasource.local.db.dispatch.DispatchDao
 import com.kikii.smarttsassignment.data.datasource.local.db.dispatch.DispatchEntity
 import com.kikii.smarttsassignment.data.datasource.local.db.route.RouteDao
 import com.kikii.smarttsassignment.data.datasource.local.db.route.RouteEntity
-import com.kikii.smarttsassignment.data.model.RouteModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -109,6 +107,14 @@ class SmartTsAssignmentLocalDataSource @Inject constructor(
 
     suspend fun deleteDispatch(dispatchEntity: DispatchEntity) {
         dispatchDao.deleteDispatch(dispatchEntity)
+    }
+
+    suspend fun findDuplicateDispatch(driverId: Long, routeId: Long, startOrder: Long): DispatchEntity? {
+        return dispatchDao.findDuplicateDispatch(driverId, routeId, startOrder)
+    }
+
+    suspend fun findDispatchesByDate(date: String): List<DispatchEntity> {
+        return dispatchDao.findDispatchesByDate(date)
     }
 
     // get all

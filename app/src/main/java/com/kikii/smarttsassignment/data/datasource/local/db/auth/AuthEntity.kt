@@ -13,6 +13,9 @@ data class AuthEntity (
     @ColumnInfo(name = "loginId")
     val loginId: String,
 
+    @ColumnInfo(name = "password")
+    val password: String,
+
     @ColumnInfo(name = "name")
     val name: String,
 

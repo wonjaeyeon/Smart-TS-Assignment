@@ -25,7 +25,7 @@
     
 
     <string name="settings_account_title">Account</string>
-    <string name="settings_account_subtitle">This screen will help you learn about forms in Jetpack Compose</string>
+    <string name="settings_account_subtitle">This screen will show account info of this user</string>
     <string name="logout">Logout</string>
 
 

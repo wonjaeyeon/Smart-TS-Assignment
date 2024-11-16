@@ -113,13 +113,14 @@ object DispatchMapper {
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
 
     // Convert DispatchResponse to List of DispatchEntity for local storage
-    fun fromDispatchResponseToDispatchEntity(response: DispatchResponse): List<DispatchEntity> {
+    fun fromDispatchResponseToDispatchEntity(response: DispatchResponse, date : String): List<DispatchEntity> {
         val dispatchList = response.`object`
             ?: throw IllegalArgumentException("DispatchResponse.object cannot be null")
 
         return dispatchList.map { dispatch ->
             DispatchEntity(
                 id = dispatch.id,
+                date = date,
                 startOrder = dispatch.startOrder,
                 routeName = dispatch.routeName,
                 routeId = dispatch.routeId,
@@ -195,9 +196,10 @@ object DispatchMapper {
     }
 
     // Convert DispatchModel to DispatchEntity for local storage
-    fun fromDispatchModelToDispatchEntity(model: DispatchModel): DispatchEntity {
+    fun fromDispatchModelToDispatchEntity(model: DispatchModel, date : String): DispatchEntity {
         return DispatchEntity(
             id = model.id,
+            date = date,
             startOrder = model.startOrder,
             routeName = model.routeName,
             routeId = model.routeId,
