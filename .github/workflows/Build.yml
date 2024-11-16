@@ -88,7 +88,10 @@ jobs:
           distribution: 'zulu'
           cache: gradle
       - name: Run android tests
-        run: ./gradlew connectedCheck --stacktrace
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          script: ./gradlew connectedCheck --stacktrace
       - name: Upload android test reports
         if: always()
         uses: actions/upload-artifact@v4
