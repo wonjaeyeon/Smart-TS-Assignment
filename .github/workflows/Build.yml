@@ -14,8 +14,8 @@ on:
     branches:
       - main
       - develop_v1
-      - feature_v1
-      - hot_fix_v1_route_jwt_update
+      #- feature_v1
+      #- hot_fix_v1_route_jwt_update
 
 jobs:
   build:

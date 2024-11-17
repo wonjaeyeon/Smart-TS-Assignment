@@ -15,36 +15,6 @@ class DefaultRouteRepository @Inject constructor(
 ): RouteRepository {
 
 
-//    override suspend fun fetchLatestRoute(jwt: String): Flow<ResultData<RouteModel?>> {
-//        return flow {
-//            try {
-//                // Try fetching the latest route from the remote data source
-//                val response = smartTsAssignmentRemoteDataSource.getDriverRoute(jwt).first()
-//                if (response.isSuccessful) {
-//                    val route = response.body()
-//                    if (route != null) {
-//                        // Map the route response to RouteModel
-//                        val routeModel = routeMapper.fromRouteResponseToRouteModel(route)
-//
-//                        // Save the mapped RouteEntity to local database
-//                        val routeEntity = routeMapper.fromRouteModelToRouteEntity(routeModel)
-//                        smartTsAssignmentLocalDataSource.insertRoute(routeEntity)  // Assuming this function exists
-//
-//                        // Emit the ResultData with the fetched route model
-//                        emit(ResultData.SuccessData(routeModel))
-//                        return@flow
-//                    }
-//                }
-//                // If the response isn't successful or route is null, fall back to local data
-//                emit(localRouteModel.first())
-//            } catch (e: Exception) {
-//                // On error, emit the locally stored route if available
-//                emit(localRouteModel.firstOrNull() ?: ResultData.ErrorData(e))
-//            }
-//        }
-//    }
-
-
     override suspend fun fetchLatestRoute(jwt: String): Flow<ResultData<RouteModel?>> {
         return flow {
             val response = smartTsAssignmentRemoteDataSource.getDriverRoute(jwt).first()
