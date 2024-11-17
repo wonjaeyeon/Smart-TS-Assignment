@@ -26,117 +26,6 @@ import com.kikii.smarttsassignment.data.model.DispatchModel
 import com.kikii.smarttsassignment.ui.feature.dispatch.components.CustomDatePickerDialog
 import com.kikii.smarttsassignment.ui.feature.dispatch.components.DispatchItem
 
-//
-//@Composable
-//fun DispatchScreen(
-//    modifier: Modifier = Modifier,
-//
-//){
-//    Column(
-//        modifier = modifier.fillMaxSize(),
-//        verticalArrangement = Arrangement.Top,
-//        horizontalAlignment = Alignment.CenterHorizontally
-//    )
-//    {
-//        Spacer(modifier = Modifier.height(40.dp))
-//
-//        Text(
-//            modifier = Modifier.padding(8.dp),
-//            text = stringResource(id = R.string.dispatch_screen_title),
-//            style = MaterialTheme.typography.titleLarge,
-//            textAlign = TextAlign.Center,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-//
-//        Text(
-//            modifier = Modifier.padding(8.dp),
-//            text = stringResource(id = R.string.dispatch_screen_subtitle),
-//            style = MaterialTheme.typography.bodyMedium,
-//            textAlign = TextAlign.Center,
-//            color = MaterialTheme.colorScheme.outline
-//        )
-//
-//        Text(
-//            modifier = Modifier.padding(8.dp),
-//            text = stringResource(id = R.string.dispatch_screen_no_dispatches),
-//            style = MaterialTheme.typography.bodyMedium,
-//            textAlign = TextAlign.Center,
-//            color = MaterialTheme.colorScheme.outline
-//        )
-//    }
-//}
-
-//@Composable
-//fun DispatchScreen(
-//    modifier: Modifier = Modifier,
-//    viewModel: DispatchViewModel = hiltViewModel()
-//) {
-//    val dispatchUiState by viewModel.dispatchUiState.collectAsState()
-//
-//    Column(
-//        modifier = modifier.fillMaxSize(),
-//        verticalArrangement = Arrangement.Top,
-//        horizontalAlignment = Alignment.CenterHorizontally
-//    ) {
-//        Spacer(modifier = Modifier.height(40.dp))
-//        Text(
-//            modifier = Modifier.padding(8.dp),
-//            text = stringResource(id = R.string.dispatch_screen_title),
-//            style = MaterialTheme.typography.titleLarge,
-//            textAlign = TextAlign.Center,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-//        Text(
-//            modifier = Modifier.padding(horizontal = 8.dp),
-//            text = stringResource(id = R.string.dispatch_screen_subtitle),
-//            style = MaterialTheme.typography.bodySmall,
-//            textAlign = TextAlign.Center,
-//            color = MaterialTheme.colorScheme.outline
-//        )
-//
-//        when (dispatchUiState) {
-//            is DispatchUiState.Loading -> Text("Loading dispatch data...")
-//            is DispatchUiState.Success -> {
-//                val dispatchList = (dispatchUiState as DispatchUiState.Success).data
-//                if (dispatchList.isNullOrEmpty()) {
-//                    Text("There are no dispatches")
-//                } else {
-//                    LazyColumn {
-//                        items(dispatchList) { dispatch ->
-//                            DispatchItem(dispatch = dispatch)
-//                        }
-//                    }
-//                }
-//            }
-//            is DispatchUiState.Error -> {
-//                val error = (dispatchUiState as DispatchUiState.Error).exception
-//                Text("Failed to load dispatch data: ${error.message}")
-//            }
-//        }
-//    }
-//}
-//
-//@Composable
-//fun DispatchItem(dispatch: DispatchModel?) {
-//    Column(
-//        modifier = Modifier
-//            .fillMaxWidth()
-//            .padding(8.dp)
-//    ) {
-//        Text("Driver Name: ${dispatch?.driverName}")
-//        Text("Route Name: ${dispatch?.routeName}")
-//        Text("Bus Number: ${dispatch?.busNumber}")
-//        Text("Start Time: ${dispatch?.startTime}")
-//        Spacer(modifier = Modifier.height(8.dp))
-//    }
-//}
-//
-//@Preview
-//@Composable
-//fun DispatchScreenPreview() {
-//    DispatchScreen()
-//}
-
 @Composable
 fun DispatchScreen(
     modifier: Modifier = Modifier,
@@ -225,6 +114,7 @@ fun DispatchScreen(
                     }
                 }
             }
+
             is DispatchUiState.Error -> {
                 val error = (dispatchUiState as DispatchUiState.Error).exception
                 Text("Failed to load dispatch data: ${error.message}")
