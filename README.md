@@ -18,8 +18,9 @@
 
 ### Screen Record
 <p align="center">
-<img src="https://github.com/user-attachments/assets/73404106-8a13-43dd-b7d8-00c4e864ec92" width="40%" height="30%">
+[Screen_recording_20241117_165714.webm](https://github.com/user-attachments/assets/38732c63-b9c7-454d-8e21-4a3fafb2b2a2)
 </p>
+
 
 # OverView
 
