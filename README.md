@@ -18,9 +18,12 @@
 
 ### Screen Record
 <p align="center">
-<img src="https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229" width="40%" height="30%">
+<img src="https://github.com/user-attachments/assets/54ba2687-cec3-48c9-ac34-f4f0a5936adb" width="40%" height="30%">
 </p>
 
+#### mp4 file:
+
+https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229
 
 # OverView
 
