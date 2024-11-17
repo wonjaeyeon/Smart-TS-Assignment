@@ -46,6 +46,20 @@ https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229
 <img src="https://github.com/user-attachments/assets/dbb903ad-3534-44ee-9aed-7aa82f68c633" width="90%" height="40%">
 </p>
 
+### API Sequence Diagram(JWT Expriation, 500 Error)
+
+#### JWT Expriation
+<p align="center">
+<img src="https://github.com/user-attachments/assets/5f0dad83-eaa2-4420-a083-c897ec845e37" width="90%" height="40%">
+</p>
+
+#### 500 Error(Local Caching)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/971243a4-bbb5-4e9e-94b6-1bc50509f22f" width="90%" height="40%">
+</p>
+
+
+
 
 ## Technology Stack
 - Tools: IntelliJ 2024.2.4
