@@ -67,14 +67,6 @@ fun MainSettingsScreen(
             color = MaterialTheme.colorScheme.primary,
 
         )
-//        // Button to navigate to Notification Settings
-//        Button(onClick = { navController.navigate(SettingRoute.NotificationSettings.toString()) }) {
-//            Text("Notification Settings")
-//        }
-//        // Button to navigate to Privacy Settings
-//        Button(onClick = { navController.navigate(SettingRoute.PrivacySettings.toString()) }) {
-//            Text("Privacy Settings")
-//        }
         SmartTsItemList(listItems = listItems, navController = navController)
     }
 }

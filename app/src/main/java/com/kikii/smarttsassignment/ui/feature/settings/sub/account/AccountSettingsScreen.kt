@@ -88,34 +88,6 @@ fun AccountSettingsScreen(
         Spacer(modifier = Modifier.height(40.dp))
         UserInfoCard(userInfo = userInfo)
 
-//        // User Info
-//        Text(
-//            text = loginId,
-//            style = MaterialTheme.typography.titleMedium,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-//        Text(
-//            text = userRoleName,
-//            style = MaterialTheme.typography.titleMedium,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-//        Text(
-//            text = name,
-//            style = MaterialTheme.typography.titleMedium,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-//        Text(
-//            text = position,
-//            style = MaterialTheme.typography.titleMedium,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-//        Text(
-//            text = companyName,
-//            style = MaterialTheme.typography.titleMedium,
-//            color = MaterialTheme.colorScheme.primary
-//        )
-
-
         // Logout Button
         Button(
             onClick = {

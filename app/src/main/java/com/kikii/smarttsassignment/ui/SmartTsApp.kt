@@ -79,14 +79,6 @@ fun SmartTsApp(
             navigateToTopLevelDestination = navigationActions::navigateTo
         ) {
 
-            // Navigate to Route.Router if logged out
-//            LaunchedEffect(loginViewModel.loggedOut) {
-//                navController.navigate(Route.Router) {
-//                    popUpTo(navController.graph.startDestinationId) { inclusive = true }
-//                }
-//                loginViewModel.loggedOut = false // Reset the logout state to prevent repeated navigation
-//            }
-
             SmartTsNavHost(
                 navController = navController,
                 contentType = contentType,

@@ -46,50 +46,6 @@ fun RouteScreen(
             is RouteUiState.Success -> {
                 val route = (routeUiState as RouteUiState.Success).route
                 SmartTsDriverInfoCard(route = route)
-//                Card(
-//                    modifier = Modifier.padding(16.dp),
-//                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-//                    //colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-//                ) {
-//
-//                    Row (
-//                        modifier = Modifier.padding(16.dp),
-//                        verticalAlignment = Alignment.CenterVertically
-//                    ){
-//                        // Display driver icon at the top using Material Icon
-//                        Icon(
-//                            imageVector = Icons.Default.PersonPin, // Use built-in Material icon for "person"
-//                            contentDescription = stringResource(R.string.route_screen_driver_icon_content_description),
-//                            modifier = Modifier
-//                                .size(80.dp)
-//                                .padding(bottom = 16.dp),
-//                            tint = MaterialTheme.colorScheme.primary
-//                        )
-//
-//                        Column(
-//                            modifier = Modifier.padding(16.dp),
-//                            verticalArrangement = Arrangement.spacedBy(8.dp)
-//                        ) {
-//                            Text(
-//                                text = "Driver Name: ${route.driverName}",
-//                                style = MaterialTheme.typography.bodyLarge,
-//                                color = MaterialTheme.colorScheme.onSurface
-//                            )
-//                            Text(
-//                                text = "Route Name: ${route.routeName}",
-//                                style = MaterialTheme.typography.bodyLarge,
-//                                color = MaterialTheme.colorScheme.onSurface
-//                            )
-//                            Text(
-//                                text = "Bus Number: ${route.busNumber}",
-//                                style = MaterialTheme.typography.bodyLarge,
-//                                color = MaterialTheme.colorScheme.onSurface
-//                            )
-//                        }
-//                    }
-//                }
-
-
 
             }
             is RouteUiState.Error -> {

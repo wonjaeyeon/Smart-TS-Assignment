@@ -14,10 +14,16 @@
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/03444cfa-5737-4167-82f5-f8a4f80f4c1b" width="40%" height="30%">
-<img src="https://github.com/user-attachments/assets/826a2948-77a9-4d56-b61f-cfed87a88e5f" width="40%" height="30%">
 </p>
 
+### Screen Record
+<p align="center">
+<img src="https://github.com/user-attachments/assets/54ba2687-cec3-48c9-ac34-f4f0a5936adb" width="40%" height="30%">
+</p>
 
+#### mp4 file:
+
+https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229
 
 # OverView
 
@@ -39,6 +45,20 @@
 <p align="center">
 <img src="https://github.com/user-attachments/assets/dbb903ad-3534-44ee-9aed-7aa82f68c633" width="90%" height="40%">
 </p>
+
+### API Sequence Diagram(JWT Expriation, 500 Error)
+
+#### JWT Expriation
+<p align="center">
+<img src="https://github.com/user-attachments/assets/5f0dad83-eaa2-4420-a083-c897ec845e37" width="90%" height="40%">
+</p>
+
+#### 500 Error(Local Caching)
+<p align="center">
+<img src="https://github.com/user-attachments/assets/971243a4-bbb5-4e9e-94b6-1bc50509f22f" width="90%" height="40%">
+</p>
+
+
 
 
 ## Technology Stack
@@ -173,7 +193,6 @@
 │   ├── MainActivity.kt
 │   ├── SmartTsApp.kt
 │   ├── components
-│   │   ├── app_bar
 │   │   ├── card
 │   │   │   └── SmartTsDriverInfoCard.kt
 │   │   ├── list
@@ -242,9 +261,10 @@
 ```
 
 # 프로젝트를 통해 이룬 부분
-- 애초에 기획한 모든 기능 구현 완성
+- 요구사항에 있는 모든 기능 구현 완성
 - Android User가 대다수라는 걸 가만하면 DUAL, SINGLE 화면 모두 호환가능한 Reactive UI로 제작
-- 안드로이드 공식문서에서 보여주는 local cache 구현 (Mutex lock만 따로 사용 안 함)
+- 안드로이드 공식문서에서 보여주는 local caching 구현 (Mutex lock만 따로 사용 안 함)
+- JWT Expiration, 500 Error 등 발생가능한 모든 상황을 Data layer에 반영
 - MVVM 패턴으로 구현
 
 
