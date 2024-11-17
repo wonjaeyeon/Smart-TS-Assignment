@@ -13,7 +13,7 @@ on:
   pull_request:
     branches:
       - main
-      - develop_v1
+      #- develop_v1
       #- feature_v1
       #- hot_fix_v1_route_jwt_update
 
