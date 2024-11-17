@@ -96,10 +96,12 @@ fun SmartTsAssignmentTheme(
     content: @Composable () -> Unit
 ) {
     val smartTsColorScheme = when {
+        // Use dynamic color scheme if available
       dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
         val context = LocalContext.current
         if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
       }
+        // Use static color scheme
       darkTheme -> darkScheme
       else -> lightScheme
     }

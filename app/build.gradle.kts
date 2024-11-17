@@ -77,6 +77,13 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.junit.junit)
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
 
     // Compose UI Test
@@ -114,10 +121,10 @@ dependencies {
     kapt(libs.hilt.compiler)
     // Hilt and instrumented tests.
     androidTestImplementation(libs.hilt.android.testing)
-    kaptAndroidTest(libs.hilt.android.compiler)
+    //kaptAndroidTest(libs.hilt.android.compiler)
     // Hilt and Robolectric tests.
     testImplementation(libs.hilt.android.testing)
-    kaptTest(libs.hilt.android.compiler)
+    //kaptTest(libs.hilt.android.compiler)
 
     // Room DB
     implementation(libs.androidx.room.runtime)
@@ -131,6 +138,10 @@ dependencies {
     testImplementation(libs.androidx.room.testing)
     implementation(libs.androidx.room.paging)
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.retrofit.converter.gson)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
