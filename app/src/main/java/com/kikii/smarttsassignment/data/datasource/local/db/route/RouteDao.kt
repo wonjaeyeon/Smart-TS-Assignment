@@ -18,6 +18,10 @@ interface RouteDao {
     @Delete
     suspend fun deleteRoute(route: RouteEntity)
 
+    // Delete all routes
+    @Query("DELETE FROM route")
+    suspend fun deleteAllRoutes()
+
     // Get a route by its routeId
     @Query("SELECT * FROM route WHERE routeId = :routeId LIMIT 1")
     suspend fun getRouteById(routeId: Long): RouteEntity?

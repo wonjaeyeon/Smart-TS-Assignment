@@ -18,6 +18,10 @@ interface DispatchDao {
     @Delete
     suspend fun deleteDispatch(dispatch: DispatchEntity)
 
+    // Delete all dispatch entries
+    @Query("DELETE FROM dispatch")
+    suspend fun deleteAllDispatches()
+
     // Get a dispatch by driverId, routeId, and startOrder to find duplicates
     @Query("SELECT * FROM dispatch WHERE driverId = :driverId AND routeId = :routeId AND startOrder = :startOrder LIMIT 1")
     suspend fun findDuplicateDispatch(driverId: Long, routeId: Long, startOrder: Long): DispatchEntity?
