@@ -17,9 +17,7 @@
 </p>
 
 ### Screen Record
-<p align="center">
-[Screen_recording_20241117_165714.webm](https://github.com/user-attachments/assets/38732c63-b9c7-454d-8e21-4a3fafb2b2a2)
-</p>
+
 
 
 # OverView
