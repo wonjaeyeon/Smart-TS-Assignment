@@ -248,9 +248,10 @@ https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229
 ```
 
 # 프로젝트를 통해 이룬 부분
-- 애초에 기획한 모든 기능 구현 완성
+- 요구사항에 있는 모든 기능 구현 완성
 - Android User가 대다수라는 걸 가만하면 DUAL, SINGLE 화면 모두 호환가능한 Reactive UI로 제작
-- 안드로이드 공식문서에서 보여주는 local cache 구현 (Mutex lock만 따로 사용 안 함)
+- 안드로이드 공식문서에서 보여주는 local caching 구현 (Mutex lock만 따로 사용 안 함)
+- JWT Expiration, 500 Error 등 발생가능한 모든 상황을 Data layer에 반영
 - MVVM 패턴으로 구현
 
 
