@@ -179,7 +179,6 @@ https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229
 │   ├── MainActivity.kt
 │   ├── SmartTsApp.kt
 │   ├── components
-│   │   ├── app_bar
 │   │   ├── card
 │   │   │   └── SmartTsDriverInfoCard.kt
 │   │   ├── list
