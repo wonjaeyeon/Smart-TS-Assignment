@@ -18,7 +18,7 @@
 
 ### Screen Record
 <p align="center">
-<img src="https://github.com/user-attachments/assets/9d437cf4-a724-4e2f-abab-292dc839bba4" width="40%" height="30%">
+<img src="[https://github.com/user-attachments/assets/9d437cf4-a724-4e2f-abab-292dc839bba4](https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229)" width="40%" height="30%">
 </p>
 
 
