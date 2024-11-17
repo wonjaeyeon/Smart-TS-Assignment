@@ -50,7 +50,7 @@ https://github.com/user-attachments/assets/c762b3fd-00b9-46ac-9d5d-5f0c7dc52229
 
 #### JWT Expriation
 <p align="center">
-<img src="https://github.com/user-attachments/assets/5f0dad83-eaa2-4420-a083-c897ec845e37" width="90%" height="40%">
+<img src="https://github.com/user-attachments/assets/4b959ba2-4db8-48b5-a45a-facc3302d26c" width="90%" height="40%">
 </p>
 
 #### 500 Error(Local Caching)
