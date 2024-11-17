@@ -14,10 +14,12 @@
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/03444cfa-5737-4167-82f5-f8a4f80f4c1b" width="40%" height="30%">
-<img src="https://github.com/user-attachments/assets/826a2948-77a9-4d56-b61f-cfed87a88e5f" width="40%" height="30%">
 </p>
 
-
+### Screen Record
+<p align="center">
+<img src="https://github.com/user-attachments/assets/73404106-8a13-43dd-b7d8-00c4e864ec92" width="40%" height="30%">[Screen_recording_20241117_165714.webm](../../../../Downloads/Screen_recording_20241117_165714.webm)
+</p>
 
 # OverView
 
